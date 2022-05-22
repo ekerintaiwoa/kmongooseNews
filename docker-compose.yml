@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: docker-node-mongodatabase
+    restart: always
+    build: .
+    external_links:
+      - mongodatabase
+  database:
+    container_name: mongodatabase
+    image: 'mongo'
+    ports:
+      - '27017:27017'
+    
